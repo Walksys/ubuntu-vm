@@ -2,16 +2,14 @@
 
 An advanced, cloud-optimized **Ubuntu 24.04 LTS Virtual Machine** operating seamlessly inside a Docker container via QEMU hypervisor orchestration. This image bypasses standard interactive OS setups by launching a pre-baked cloud image instantly, allowing fully customizable dynamic hardware profiles (RAM, CPU, Storage) and direct user provisioning at runtime.
 
-
 ## ⚡ Core Engine Capabilities
 
-* 🚀 **Instant Boot Architecture:** Powered by official Ubuntu Cloud `.iso` image layers—zero setup waiting times.
+* 🚀 **Instant Boot Architecture:** Powered by official Ubuntu Cloud image layers—zero setup waiting times.
 * ⚙️ **Dynamic Sizing Configurations:** Control compute resources and automatically expand storage limits via initialization flags.
 * 🔐 **Automated Secure Provisioning:** Built-in **cloud-init** configurations to inject specific deployment profiles instantly.
 
-## 🔐 **Quick Access Credentials** 
+## 🔐 **Quick Access Credentials** * **Default Username**: root
 
-* **Default Username**: root
 * **Default Password**: root
 * **Access**: root / root
 
@@ -29,6 +27,7 @@ docker run -it --rm \
   -e CPU=2 \
   -e DISK_SIZE=25G \
   walksysdev/ubuntu-vm
+
 ```
 
 ### 💻 Performance Profile (8GB RAM, 4 CPU Cores, 50GB Storage Disk)
@@ -41,6 +40,7 @@ docker run -it --rm \
   -e CPU=4 \
   -e DISK_SIZE=50G \
   walksysdev/ubuntu-vm
+
 ```
 
 ### 📦 CodeSanxBox VPS Profile (Defaults: 8GB RAM, 3 Cores, 100GB Storage Disk)
@@ -53,19 +53,18 @@ docker run -it --rm \
   -e CPU=3 \
   -e DISK_SIZE=100G \
   walksysdev/ubuntu-vm
-```
 
+```
 
 ## 🌐 Network Routing & Access Protocols
 
-Once the container initialization is running, you can interact with your newly spawned Debian machine through your web browser or terminal:
+Once the container initialization is running, you can interact with your newly spawned Ubuntu machine through your web browser or terminal:
 
 | Access Type | Protocol / Command | Default Credentials |
 | --- | --- | --- |
 | 🔐 **Secure SSH Console** | `ssh root@localhost -p 2026` | Username: `root` <br>
 
 <br> Password: `root` |
-
 
 ## 🛠️ Infrastructure Build Management
 
@@ -75,13 +74,14 @@ If you want to pull down the source configurations or compile the container manu
 
 ```bash
 docker pull walksysdev/ubuntu-vm:latest
+
 ```
 
 ### Manual Compilation Pipeline
 
 ```bash
-docker build -t walksysdev/ubuntu-vm .
-```
+docker rmi walksysdev/ubuntu-vm:latest --force 2>/dev/null || true && docker build --no-cache -t walksysdev/ubuntu-vm .
 
+```
 
 *Maintained with absolute precision by 🚀 [@walksysdev](https://hub.docker.com/r/walksysdev).*
