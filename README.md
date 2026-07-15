@@ -5,7 +5,7 @@ An advanced, cloud-optimized **Ubuntu 24.04 LTS Virtual Machine** operating seam
 
 ## ⚡ Core Engine Capabilities
 
-* 🚀 **Instant Boot Architecture:** Powered by official Debian Cloud `.iso` image layers—zero setup waiting times.
+* 🚀 **Instant Boot Architecture:** Powered by official Ubuntu Cloud `.iso` image layers—zero setup waiting times.
 * ⚙️ **Dynamic Sizing Configurations:** Control compute resources and automatically expand storage limits via initialization flags.
 * 🔐 **Automated Secure Provisioning:** Built-in **cloud-init** configurations to inject specific deployment profiles instantly.
 
