@@ -5,6 +5,11 @@ An advanced, cloud-optimized **Ubuntu 24.04 LTS Virtual Machine** operating seam
 ## ⚡ Core Engine Capabilities
 
 * 🚀 **Instant Boot Architecture:** Powered by official Ubuntu Cloud image layers—zero setup waiting times.
+* 💿 **Base OS Infrastructure:** * **Image Format**: Cloud-optimized `QCOW2` (Native Virtio support).
+* **Base Distribution**: Ubuntu 24.04 LTS (Noble Numbat) Server Edition.
+* **Boot Method**: Headless Cloud-Init provisioned (No interactive installer/ISO boot process).
+
+
 * ⚙️ **Dynamic Sizing Configurations:** Control compute resources and automatically expand storage limits via initialization flags.
 * 🔐 **Automated Secure Provisioning:** Built-in **cloud-init** configurations to inject specific deployment profiles instantly.
 
