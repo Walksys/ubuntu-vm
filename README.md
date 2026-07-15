@@ -62,9 +62,7 @@ Once the container initialization is running, you can interact with your newly s
 
 | Access Type | Protocol / Command | Default Credentials |
 | --- | --- | --- |
-| 🔐 **Secure SSH Console** | `ssh root@localhost -p 2026` | Username: `root` <br>
-
-<br> Password: `root` |
+| 🔐 **Secure SSH Console** | `ssh root@localhost -p 2026` | Username: `root` <br> <br> Password: `root` |
 
 ## 🛠️ Infrastructure Build Management
 
