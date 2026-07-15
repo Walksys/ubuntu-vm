@@ -23,10 +23,9 @@ RUN echo '#!/bin/bash' > /entrypoint.sh && \
     echo 'set -e' >> /entrypoint.sh && \
     echo 'IMAGE_NAME=$(basename "$IMAGE_URL")' >> /entrypoint.sh && \
     echo 'clear' >> /entrypoint.sh && \
-    echo 'echo "[*] Cleaning old images..."' >> /entrypoint.sh && \
-    echo 'rm -f "$IMAGE_NAME"' >> /entrypoint.sh && \
-    echo 'echo "[*] Downloading Ubuntu Noble (24.04) VPS Image..."' >> /entrypoint.sh && \
-    echo 'curl -L -# -o "$IMAGE_NAME" "$IMAGE_URL"' >> /entrypoint.sh && \
+    echo 'if [ ! -f "$IMAGE_NAME" ]; then' >> /entrypoint.sh && \
+    echo '    curl -L -# -o "$IMAGE_NAME" "$IMAGE_URL"' >> /entrypoint.sh && \
+    echo 'fi' >> /entrypoint.sh && \
     echo 'qemu-img resize "$IMAGE_NAME" "$DISK_SIZE" > /dev/null 2>&1' >> /entrypoint.sh && \
     echo 'cat <<EOF > user-data' >> /entrypoint.sh && \
     echo '#cloud-config' >> /entrypoint.sh && \
@@ -36,9 +35,6 @@ RUN echo '#!/bin/bash' > /entrypoint.sh && \
     echo '  list: |' >> /entrypoint.sh && \
     echo '    root:root' >> /entrypoint.sh && \
     echo '  expire: false' >> /entrypoint.sh && \
-    echo 'runcmd:' >> /entrypoint.sh && \
-    echo '  - echo -e "Ubuntu 24.04 LTS \\\n\\\nWalksysDev login:" > /etc/issue' >> /entrypoint.sh && \
-    echo '  - echo -e "Welcome to WalksysDev Ubuntu VPS Engine!" > /etc/motd' >> /entrypoint.sh && \
     echo 'EOF' >> /entrypoint.sh && \
     echo 'echo "instance-id: walksysdev-vps" > meta-data' >> /entrypoint.sh && \
     echo 'echo "local-hostname: WalksysDev" >> meta-data' >> /entrypoint.sh && \
