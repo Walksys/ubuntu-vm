@@ -55,7 +55,7 @@ docker run -it --rm \
   -v "$PWD/vmdata:/vmdata" \
   -p 2026:2222 \
   -e RAM=7900 \
-  -e CPU=3 \
+  -e CPU=4 \
   -e DISK_SIZE=100G \
   walksysdev/ubuntu-vm
 
